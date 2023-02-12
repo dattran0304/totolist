@@ -29,9 +29,9 @@ const addNewTask = (event) => {
 	})
 }
 
-const renderTask = (id, textInput) => {	
+const renderTask = (taskId, textInput) => {	
 	let taskHTML = `
-		<div class="task" data-id="${id}">
+		<div class="task" data-id="${taskId}">
 			<div class="task__content">
 				<input type="text" class="task__content__text" value="${textInput}" readonly>
 				<div class="task__actions">
@@ -45,16 +45,16 @@ const renderTask = (id, textInput) => {
 	tasks.append(taskHTML)
 }
 
-const saveTask = (id, inputText) => {
+const saveTask = (taskId, inputText) => {
 	$.ajax({
-		url: `${taskApi}/${id}`,
+		url: `${taskApi}/${taskId}`,
 		type: 'PUT',
 		data: {
 			title: inputText
 		}
 	})
 	.then(data => {
-		console.log(`Update thanh cong task co id: ${id}`)
+		console.log(`Update thanh cong task co id: ${taskId}`)
 	})
 	.catch(err => {
 		console.log(err)

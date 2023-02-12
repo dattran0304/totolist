@@ -20,5 +20,5 @@ app.use('/api/task', TaskRouter)
 
 app.listen(port, () => {
 	//console.log(`App listening at http://localhost:${port}`)
-	console.log('App listening')
+	console.log(`App listening on port ${port}`)
 })

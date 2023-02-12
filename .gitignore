@@ -1,2 +1,7 @@
 *.log
+
+# dependencies
 node_modules/
+
+# env files
+.env

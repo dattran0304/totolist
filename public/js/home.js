@@ -2,7 +2,7 @@
 const newTaskForm = $('#new-task__form')
 const newTaskInput = $('#new-task__input')
 const tasks = $('#tasks')
-const api = 'http://localhost:3000/api/task'
+const taskApi = 'todolist-production-ceb7.up.railway.app/api/task'
 
 const addNewTask = (event) => {
 	event.preventDefault()
@@ -15,7 +15,7 @@ const addNewTask = (event) => {
 	}
 	
 	$.ajax({
-		url: api,
+		url: taskApi,
 		type: 'POST',
 		data: {
 			title: title
@@ -47,7 +47,7 @@ const renderTask = (id, textInput) => {
 
 const saveTask = (id, inputText) => {
 	$.ajax({
-		url: `${api}/${id}`,
+		url: `${taskApi}/${id}`,
 		type: 'PUT',
 		data: {
 			title: inputText
@@ -91,7 +91,7 @@ const deleteTask = (event) => {
 	let taskId = task.data('id')
 	
 	$.ajax({
-		url: `${api}/${taskId}`,
+		url: `${taskApi}/${taskId}`,
 		type: 'DELETE'
 	})
 	.then(data => {
@@ -105,7 +105,7 @@ const deleteTask = (event) => {
 
 const loadTask = () => {
 	$.ajax({
-        url: api,
+        url: taskApi,
         type: 'GET'
     })
 	.then(data => {

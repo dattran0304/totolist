@@ -2,7 +2,7 @@
 const newTaskForm = $('#new-task__form')
 const newTaskInput = $('#new-task__input')
 const tasks = $('#tasks')
-const taskApi = 'todolist-production-ceb7.up.railway.app/api/task'
+const taskApi = 'https://todolist-production-ceb7.up.railway.app/api/task'
 
 const addNewTask = (event) => {
 	event.preventDefault()

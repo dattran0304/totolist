@@ -9,7 +9,7 @@ const path = require('path')
 app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res, next) => {
-	res.sendFile(path.join(__dirname, 'home.html'))
+	res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 //Cho phép truy cập dữ liệu sử dụng req.body
